@@ -137,8 +137,8 @@ class RequestByCounty(object):
         inputFeature = genParam(
             'Input City/County Feature',
             dataType=['Feature Class', 'Feature Layer', 'Table'])
-        idField = genFieldParam(
-            'GeoID Field', inputFeature, isVisible=False)
+        idField = genFieldParam('GeoID Field', inputFeature)
+        idField.enabled = False
         idField.filter.list = ['Text']
         startDate, endDate = initTimeParams()
         # Output parameter
