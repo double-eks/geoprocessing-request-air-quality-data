@@ -7,7 +7,8 @@ import pandas as pd
 from bs4 import BeautifulSoup
 
 from templates import (dfToStructuredArr, downloadZipToDf, enableChildParam,
-                       formatDateOnly, genDateParam, genFieldParam, genParam)
+                       formatDateOnly, genDateParam, genFieldParam, genParam,
+                       getFeatureValue)
 
 # ============================================================================ #
 # Request Daily AQI by ZIP Code
@@ -232,12 +233,9 @@ def validateDates(startParam, endParam):
 
 def validateGeoID(featureParam, idParam):
     if (idParam.value):
-        geoidField = idParam.valueAsText
-        with arcpy.da.SearchCursor(featureParam.value, geoidField) as cursor:
-            rows = list(cursor)
-            geoid = rows[0][0]
-            if (re.search(r'^\d{5}$', geoid) == None):
-                idParam.setErrorMessage('Invalid county GeoID')
+        geoid = getFeatureValue(featureParam.value, idParam.valueAsText)
+        if (re.search(r'^\d{5}$', geoid) == None):
+            idParam.setErrorMessage('Invalid county GeoID')
 
 
 # ============================================================================ #
