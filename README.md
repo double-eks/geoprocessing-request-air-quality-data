@@ -15,18 +15,15 @@ A geoprocessing toolbox with 2 tools avaiable developed by Sean X. from _Carnegi
 
 <br></br>
 
-## Tool 1 - Request Daily AQI by ZIP
-
-### Usage
+### Tool 1 - Request Daily AQI by ZIP
 
 - Request daily air quality data for a **city** or **county** from EPA Air Quality System in a given time range
 - Output a feature table of cleaned data
 
 <br></br>
 
-## Tool 2 - Request Daily AQI by County
+### Tool 2 - Request Daily AQI by County
 
-### Usage
 
 - Input a county (polygon) feature layer/class to request daily air quality data for a **county** or **counties** from EPA Air Quality System in a given time range
 - Output a feature table of cleaned data
@@ -34,6 +31,6 @@ A geoprocessing toolbox with 2 tools avaiable developed by Sean X. from _Carnegi
 
 <br></br>
 
-## Data source credit
+### Data source credit
 
 US EPA Air Quality System (AQS) - [Air Quality Data Collected at Outdoor Monitors Across the US](https://www.epa.gov/outdoor-air-quality-data)
